@@ -178,7 +178,7 @@ input, select, textarea {
 		color: #ffffff;
 		font-weight: 600;
 		line-height: 1.5;
-		margin: 0 0 1rem 0;
+		margin: 0 0 0.5rem 0; /* lowered bottom margin to 0.5rem */
 		text-transform: uppercase;
 		letter-spacing: 0.2rem;
 	}
@@ -1272,14 +1272,15 @@ input, select, textarea {
 			margin-top: 3.5rem;
 		}
 
+			/* updated 1px to 0px to fix slight overshoot */
 			#header > *:before {
 				content: '';
 				display: block;
 				position: absolute;
-				top: calc(-3.5rem - 1px);
+				top: calc(-3.5rem - 0px);
 				left: calc(50% - 1px);
 				width: 1px;
-				height: calc(3.5rem + 1px);
+				height: calc(3.5rem + 0px);
 				background: #ffffff;
 			}
 
@@ -1291,14 +1292,22 @@ input, select, textarea {
 				display: none;
 			}
 
+		/* increaded size to 10.0 rem */
 		#header .logo {
-			width: 10.5rem;
-			height: 10.5rem;
-			line-height: 5.5rem;
-			border: solid 1px #ffffff;
+			width: 10.0rem;
+			height: 10.0rem;
+			/* line-height: 5.0rem; */
+			border: solid 1px #ffffff; /* orange for testing: #ffa500 */
 			border-radius: 100%;
 		}
 
+			/* added image properties for profile pic */
+			#header .logo img {
+				width:100%;
+				height:100%;
+				border-radius: 100%;
+			}
+			
 			#header .logo .icon:before {
 				font-size: 2rem;
 			}
@@ -1320,7 +1329,7 @@ input, select, textarea {
 				-webkit-transition-delay: 0.25s;
 				-ms-transition-delay: 0.25s;
 				transition-delay: 0.25s;
-				padding: 3rem 2rem;
+				padding: 1rem 2rem;
 				max-height: 40rem;
 				overflow: hidden;
 			}
@@ -1330,6 +1339,18 @@ input, select, textarea {
 				}
 
 			#header .content p {
+				text-transform: uppercase;
+				letter-spacing: 0.2rem;
+				font-size: 0.8rem;
+				line-height: 2;
+				width: 50%;
+				margin: auto;
+				margin-bottom: 0.5rem;
+				/* text-align: justify;
+				text-align-last: center; */
+			}
+
+			#header .content span {
 				text-transform: uppercase;
 				letter-spacing: 0.2rem;
 				font-size: 0.8rem;
@@ -1357,12 +1378,13 @@ input, select, textarea {
 					border-left: 0;
 				}
 
+				/* updated width to 10.0 rem to fit new text */
 				#header nav ul li a {
 					display: block;
-					min-width: 9.5rem;
+					min-width: 10.0rem;
 					height: 2.75rem;
 					line-height: 2.75rem;
-					padding: 0 1.25rem 0 1.45rem;
+					padding: 0 1.25rem 0 1.25rem;
 					text-transform: uppercase;
 					letter-spacing: 0.2rem;
 					font-size: 0.8rem;
@@ -1370,11 +1392,11 @@ input, select, textarea {
 				}
 
 					#header nav ul li a:hover {
-						background-color: rgba(255, 255, 255, 0.075);
+						background-color: rgba(255, 255, 255, 0.15);
 					}
 
 					#header nav ul li a:active {
-						background-color: rgba(255, 255, 255, 0.175);
+						background-color: rgba(255, 255, 255, 0.3);
 					}
 
 		#header nav.use-middle:after {
@@ -1428,6 +1450,13 @@ input, select, textarea {
 				display: none;
 			}
 
+			/* increased size to 8.0 rem */
+			#header .logo {
+				width: 8.0rem;
+				height: 8.0rem;
+				/* line-height: 3.0rem; */
+			}
+
 		}
 
 		@media screen and (max-width: 736px) {
@@ -1436,23 +1465,27 @@ input, select, textarea {
 				margin-top: 2rem;
 			}
 
+				/* updated 1px to 0px to fix slight overshoot */
 				#header > *:before {
-					top: calc(-2rem - 1px);
-					height: calc(2rem + 1px);
+					top: calc(-2rem - 0px);
+					height: calc(2rem + 0px);
 				}
 
-			#header .logo {
-				width: 4.75rem;
-				height: 4.75rem;
-				line-height: 4.75rem;
-			}
+				/* added image properties for profile pic
+				#header .logo img {
+					width:100%;
+					height:100%;
+					border-radius: 100%;
+				}
+				*/
 
 				#header .logo .icon:before {
 					font-size: 1.75rem;
 				}
 
+			/* updated to smaller vertical padding */
 			#header .content .inner {
-				padding: 2.5rem 1rem;
+				padding: 1rem 1rem;
 			}
 
 			#header .content p {
@@ -1467,8 +1500,9 @@ input, select, textarea {
 				padding: 1.5rem 0;
 			}
 
+				/* updated to smaller vertical padding */
 				#header .content .inner {
-					padding: 2.5rem 0;
+					padding: 1rem 0;
 				}
 
 				#header nav ul {
@@ -1593,11 +1627,11 @@ input, select, textarea {
 				}
 
 				#main article .close:hover:before {
-					background-color: rgba(255, 255, 255, 0.075);
+					background-color: rgba(255, 255, 255, 0.15);
 				}
 
 				#main article .close:active:before {
-					background-color: rgba(255, 255, 255, 0.175);
+					background-color: rgba(255, 255, 255, 0.30);
 				}
 
 		@media screen and (max-width: 736px) {
