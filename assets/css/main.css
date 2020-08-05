@@ -1171,7 +1171,8 @@ input, select, textarea {
 			-webkit-transition-delay: 0.75s;
 			-ms-transition-delay: 0.75s;
 			transition-delay: 0.75s;
-			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../images/overlay.png");
+			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.85), rgba(19, 21, 25, 0.85)), url("../../images/overlay.png");
+			/*background: radial-gradient(ellipse at 50% 70%, rgba(5,5,5,.8) 35%,rgba(5,5,5,.7) 60%, rgba(5,5,5,.5) 90%), url("../../images/overlay.png");*/
 			background-size: auto, 256px 256px;
 			background-position: center, center;
 			background-repeat: no-repeat, repeat;
@@ -1187,7 +1188,7 @@ input, select, textarea {
 			-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
 			-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
 			transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-			background-image: url("../../images/bg.jpg");
+			background-image: url("../../images/crater_lake.png");
 			background-position: center;
 			background-size: cover;
 			background-repeat: no-repeat;
@@ -1300,15 +1301,14 @@ input, select, textarea {
 			margin-top: 3.5rem;
 		}
 
-			/* updated 1px to 0px to fix slight overshoot */
 			#header > *:before {
 				content: '';
 				display: block;
 				position: absolute;
-				top: calc(-3.5rem - 0px);
+				top: calc(-3.5rem - 1px);
 				left: calc(50% - 1px);
 				width: 1px;
-				height: calc(3.5rem + 0px);
+				height: calc(3.5rem + 1px);
 				background: #ffffff;
 			}
 
@@ -1345,7 +1345,7 @@ input, select, textarea {
 			border-color: #ffffff;
 			border-top-width: 1px;
 			border-bottom-width: 1px;
-			max-width: 100%;
+			max-width: 55%; /* set maximum content width for full screen */
 		}
 
 			#header .content .inner {
@@ -1371,7 +1371,7 @@ input, select, textarea {
 				letter-spacing: 0.2rem;
 				font-size: 0.9rem; /* made font larger */
 				line-height: 2;
-				width: 45%;
+				width: 80%;
 				margin: auto;
 				margin-bottom: 0.5rem;
 			}
@@ -1473,13 +1473,18 @@ input, select, textarea {
 
 		@media screen and (max-width: 980px) {
 
+			/* scale content for screen size */
+			#header .content {
+				max-width: 70%;
+			}
+
 			#header .content p br {
 				display: none;
 			}
 
 			/* allow header content more space on smaller screens */
 			#header .content p {
-				width: 65%;
+				width: 95%;
 			}
 
 			/* increased size to 8.0 rem */
@@ -1497,23 +1502,19 @@ input, select, textarea {
 				margin-top: 2rem;
 			}
 
-				/* updated 1px to 0px to fix slight overshoot */
 				#header > *:before {
-					top: calc(-2rem - 0px);
-					height: calc(2rem + 0px);
+					top: calc(-2rem - 1px);
+					height: calc(2rem + 1px);
 				}
-
-				/* added image properties for profile pic
-				#header .logo img {
-					width:100%;
-					height:100%;
-					border-radius: 100%;
-				}
-				*/
 
 				#header .logo .icon:before {
 					font-size: 1.75rem;
 				}
+
+			/* scale content for screen size */
+			#header .content {
+				max-width: 85%;
+			}
 
 			/* updated to smaller vertical padding */
 			#header .content .inner {
@@ -1523,28 +1524,15 @@ input, select, textarea {
 			/* allow header content more space on smaller screens */
 			#header .content p {
 				line-height: 1.875;
-				width: 75%;
+				width: 90%;
 			}
 
 		}
 
-		@media screen and (max-width: 480px) {
+		/* transition to column display earlier since wider buttons */
+		@media screen and (max-width: 620px){
 
-			#header {
-				padding: 1.5rem 0;
-			}
-
-				/* allow header content more space on smaller screens */
-				#header .content p {
-					width: 90%;
-				}
-
-				/* updated to smaller vertical padding */
-				#header .content .inner {
-					padding: 1rem 0;
-				}
-
-				#header nav ul {
+			#header nav ul {
 					-moz-flex-direction: column;
 					-webkit-flex-direction: column;
 					-ms-flex-direction: column;
@@ -1571,6 +1559,28 @@ input, select, textarea {
 
 				#header nav.use-middle:after {
 					display: none;
+				}
+		}
+
+		@media screen and (max-width: 480px) {
+
+			#header {
+				padding: 1.5rem 0;
+			}
+
+				/* scale content for screen size */
+				#header .content {
+					max-width: 100%;
+				}
+
+				/* allow header content more space on smaller screens */
+				#header .content p {
+					width: 90%;
+				}
+
+				/* updated to smaller vertical padding */
+				#header .content .inner {
+					padding: 1rem 0;
 				}
 
 		}
