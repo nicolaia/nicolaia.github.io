@@ -1171,8 +1171,7 @@ input, select, textarea {
 			-webkit-transition-delay: 0.75s;
 			-ms-transition-delay: 0.75s;
 			transition-delay: 0.75s;
-			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.85), rgba(19, 21, 25, 0.85)), url("../../images/overlay.png");
-			/*background: radial-gradient(ellipse at 50% 70%, rgba(5,5,5,.8) 35%,rgba(5,5,5,.7) 60%, rgba(5,5,5,.5) 90%), url("../../images/overlay.png");*/
+			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.88), rgba(19, 21, 25, 0.88)), url("../../images/overlay.png");
 			background-size: auto, 256px 256px;
 			background-position: center, center;
 			background-repeat: no-repeat, repeat;
@@ -1368,8 +1367,8 @@ input, select, textarea {
 
 			#header .content p {
 				text-transform: uppercase;
-				letter-spacing: 0.2rem;
-				font-size: 0.9rem; /* made font larger */
+				letter-spacing: 0.1rem;
+				font-size: 0.95rem; /* made font larger */
 				line-height: 2;
 				width: 80%;
 				margin: auto;
@@ -1706,6 +1705,12 @@ input, select, textarea {
 			}
 
 		}
+
+/* About Me */
+	#about_me p {
+		text-align: justify;
+  		text-align-last: left;
+	}
 
 /* Footer */
 
