@@ -78,6 +78,10 @@
           if (formButtons) {
             formButtons.style.display = "none"; // hide buttons
           }
+          var formRecaptcha = form.querySelector(".g-recaptcha")
+          if (formRecaptcha) {
+          	formRecaptcha.style.display = "none"; // hide recaptcha
+          }
           var thankYouMessage = form.querySelector(".thankyou_message");
           if (thankYouMessage) {
             thankYouMessage.style.display = "block";

@@ -12,6 +12,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src='https://www.google.com/recaptcha/api.js'></script>
+		<script>
+            function recaptcha_callback() {
+        		if (grecaptcha.getResponse() !== "") {
+            		document.getElementById("submit_button").disabled = false;
+        		}
+        		else {
+        			grecaptcha.reset();
+    			};
+            };                                  
+		</script> 
 	</head>
 	<body class="is-preload">
 
@@ -105,7 +116,7 @@
 						<!-- Contact -->
 							<article id="contact">
 								<h2 class="major">Contact</h2>
-								<form class="gform" method="post" action="https://script.google.com/macros/s/AKfycbwI9id5n2lENo-gkg1KraqAdJrBmcFYW98Vjs6LpG3hSG8pVug/exec">
+								<form class="gform" method="post" action="https://script.google.com/macros/s/AKfycbySIS9ONWTq-vPBcFYpbmPNTTfqJoyigySdLfNoE1xbW3Jw_ulLO8Ud8g/exec">
 									
 									<!-- Contact Form Fields -->
 									<div class="fields">
@@ -123,9 +134,10 @@
 										</div>
 									</div>
 									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="submit" id="submit_button" value="Send Message" class="primary" disabled/></li>
 										<li><input type="reset" value="Reset" /></li>
 									</ul>
+									<div class="g-recaptcha" data-sitekey="6Ld3XEMaAAAAAA19ncgPuZU-jJE9gmTwvH92obkf" data-callback="recaptcha_callback"></div>
 
 									<!-- Thank You Fields -->
 									<div style="display:none" class="thankyou_message">
